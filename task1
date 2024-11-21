@@ -1,0 +1,88 @@
+Name:VEMULA GAYATHRI
+Company:CODTECHIT SOLUTIONS
+ID:CT12DS2434
+Domain:PYTHON PROGRAMMING
+Duration:15 SEPT to 15 NOV,2024
+
+
+
+Project Overview: Basic Calculator
+
+This project is a simple Python-based console application designed to perform basic arithmetic operations: addition, subtraction, multiplication, and division. The calculator prompts the user to input two numbers and then choose an operation from a list of available choices. Based on the selected operation, the program performs the calculation and outputs the result.
+
+ Key Features:
+1. Basic Arithmetic Operations: 
+   - The calculator supports addition, subtraction, multiplication, and division.
+   - Each operation is implemented as a separate function (add, subtract, multiply, divide).
+  
+2. Error Handling:
+   - The program handles invalid inputs, such as non-numeric values, using a try-except block to ensure the user enters valid numbers.
+   - Division by zero is explicitly checked and an error message ("Error! Division by zero.") is displayed if the user attempts it.
+
+3. User Interaction:
+   - The user is prompted to input two numbers and select an operation from a list of options (1 for addition, 2 for subtraction, 3 for multiplication, and 4 for division).
+   - Based on the user's choice, the corresponding arithmetic operation is performed, and the result is displayed.
+
+4. Input Validation:
+   - The program checks for valid numeric inputs and ensures the user selects a valid operation (1, 2, 3, or 4). If the input is invalid, the program displays an appropriate message.
+
+ Technologies Used:
+- Programming Language: Python
+- Error Handling:try-except block to handle invalid input and division by zero.
+  
+CODE:
+# Basic Calculator
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Error! Division by zero."
+
+def calculator():
+    print("Welcome to the Basic Calculator!")
+    
+    try:
+        # Taking user inputs
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+    except ValueError:
+        print("Invalid input! Please enter numbers only.")
+        return
+    
+    # Displaying available operations
+    print("Select operation:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    
+    operation = input("Choose an operation (1/2/3/4): ")
+    
+    # Performing the selected operation
+    if operation == '1':
+        result = add(num1, num2)
+        print(f"The result of addition: {num1} + {num2} = {result}")
+    elif operation == '2':
+        result = subtract(num1, num2)
+        print(f"The result of subtraction: {num1} - {num2} = {result}")
+    elif operation == '3':
+        result = multiply(num1, num2)
+        print(f"The result of multiplication: {num1} * {num2} = {result}")
+    elif operation == '4':
+        result = divide(num1, num2)
+        print(f"The result of division: {num1} / {num2} = {result}")
+    else:
+        print("Invalid operation! Please select a valid option.")
+
+if _name_ == "_main_":
+    calculator()
